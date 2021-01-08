@@ -1,14 +1,17 @@
 ZSH=$HOME/.oh-my-zsh
 
 # You can change the theme with another one from https://github.com/robbyrussell/oh-my-zsh/wiki/themes
-ZSH_THEME="awesomepanda"
+# "frisk"
+# "murilasso"
+ZSH_THEME="frisk"
 
 # Useful oh-my-zsh plugins for Le Wagon bootcamps
-plugins=(git gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search ssh-agent)
+plugins=(git gitfast last-working-dir common-aliases sublime history-substring-search ssh-agent colored-man-pages zsh-autosuggestions)
 
 # (macOS-only) Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1
 ZSH_DISABLE_COMPFIX=true
+
 # Actually load Oh-My-Zsh
 
 source "${ZSH}/oh-my-zsh.sh"
@@ -32,8 +35,8 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/sbin"
 
 # Load 'lewagon' virtualenv for the Data Bootcamp. You can comment these 2 lines to disable this behavior.
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-pyenv activate lewagon 2>/dev/null && echo "🐍 Loading 'lewagon' virtualenv"
+# export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+# pyenv activate lewagon 2>/dev/null && echo "🐍 Loading 'lewagon' virtualenv"
 
 # Store your own aliases in the ~/.aliases file and load the here.
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
@@ -41,5 +44,6 @@ pyenv activate lewagon 2>/dev/null && echo "🐍 Loading 'lewagon' virtualenv"
 # Encoding stuff for the terminal
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1 -a"
 export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1 -a"
 export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1 -a"
